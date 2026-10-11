@@ -18,6 +18,6 @@
     ].join("\n");
     var subject = "Service request: " + data.get("service");
     window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    document.getElementById("form-status").textContent = "Your email app has been requested. Review and send the email there to deliver your inquiry to Wendy. Your request has not been submitted by this website.";
+    document.getElementById("form-status").textContent = "Your email app has been requested. Review and send the email there to deliver your inquiry to RPS. Your request has not been submitted by this website.";
   });
 })();

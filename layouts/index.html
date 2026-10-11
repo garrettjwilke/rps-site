@@ -63,19 +63,31 @@
   </div>
 </section>
 <section class="area" id="areas">
-  <div class="wrap split">
-    <div>
-      <p class="eyebrow">{{ .Params.areas.eyebrow }}</p>
-      <h2>{{ partial "br-lines.html" .Params.areas.lines }}</h2>
-      {{ range .Params.areas.paragraphs }}
-      <p class="subtle">{{ . }}</p>
-      {{ end }}
+  <div class="wrap">
+    <div class="split area-intro">
+      <div>
+        <p class="eyebrow">{{ .Params.areas.eyebrow }}</p>
+        <h2>{{ partial "br-lines.html" .Params.areas.lines }}</h2>
+      </div>
+      <div>
+        {{ range .Params.areas.paragraphs }}
+        <p class="subtle">{{ . }}</p>
+        {{ end }}
+      </div>
     </div>
-    <div class="locations">
-      {{ range .Params.areas.locations }}
-      <span>{{ . }}</span>
-      {{ end }}
+    {{ range .Params.areas.regions }}
+    <div class="region">
+      <h3>{{ .name }}</h3>
+      <ul class="counties">
+        {{ range .counties }}
+        <li>
+          <strong>{{ .name }}</strong>
+          <span>{{ .cities }}</span>
+        </li>
+        {{ end }}
+      </ul>
     </div>
+    {{ end }}
   </div>
 </section>
 <section class="about" id="about">

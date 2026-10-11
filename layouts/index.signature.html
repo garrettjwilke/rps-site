@@ -1,0 +1,48 @@
+{{ $site := hugo.Data.site }}
+{{ $sig := $site.signature }}
+{{ $home := strings.TrimSuffix "/" site.BaseURL }}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ $site.company }}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#ffffff;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="border-collapse:collapse;background-color:#ffffff;">
+    <tr>
+      <td style="padding:16px 16px 12px 16px;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="border-collapse:collapse;background-color:#ffffff;font-family:Arial,sans-serif;color:#213549;">
+    <tr>
+      <td valign="middle" style="padding:0 14px 0 0;vertical-align:middle;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
+          <tr>
+            <td width="52" height="58" align="center" valign="middle" bgcolor="#102235" style="width:52px;height:58px;background-color:#102235;color:#d6aa80;font-family:Georgia,'Times New Roman',serif;font-size:32px;line-height:58px;text-align:center;border-radius:2px;">R</td>
+          </tr>
+        </table>
+      </td>
+      <td valign="middle" style="vertical-align:middle;font-family:Arial,sans-serif;color:#213549;">
+        <div style="font-size:18px;line-height:1.2;font-weight:bold;">Reliable Professional<br>Services</div>
+        <div style="font-size:12px;line-height:1.2;letter-spacing:2px;padding-top:4px;">{{ upper $site.footerPlace }}</div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top:12px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;border-top:2px solid #ad7043;">
+          <tr>
+            <td style="padding-top:12px;font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#213549;">
+              <span style="font-weight:bold;color:#102235;">{{ $sig.name }}</span><br>
+              {{ $sig.legalName }}<br>
+              {{ $sig.dba }}<br>
+              Email: <a href="{{ printf "mailto:%s" $site.email }}" style="color:#ad7043;text-decoration:none;">{{ $site.email }}</a><br>
+              <a href="{{ $home }}" style="color:#ad7043;text-decoration:none;">{{ $home }}</a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

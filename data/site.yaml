@@ -2,6 +2,10 @@ company: Reliable Professional Services
 phoneDisplay: 704-338-1775
 phoneTel: "+17043381775"
 email: RPSLLCPS@gmail.com
+signature:
+  name: Wendy L. Henrich
+  legalName: Reliable Professional Services, LLC
+  dba: d/b/a R.P.S., LLC
 topNote: Serving the greater Charlotte area for over 25 years
 footerNote: Formerly Reynolds Professional Service. Serving the Charlotte area for over 25 years.
 footerPlace: Charlotte, North Carolina
@@ -14,7 +18,7 @@ nav:
     href: "#services"
   - label: Service Areas
     href: "#areas"
-  - label: About Wendy
+  - label: About RPS
     href: "#about"
 services:
   - Process serving

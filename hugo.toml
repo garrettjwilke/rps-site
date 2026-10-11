@@ -6,6 +6,15 @@ enableRobotsTXT = true
 disableKinds = ["RSS", "taxonomy", "term"]
 disableHugoGeneratorInject = true
 
+[outputs]
+  home = ["html", "signature"]
+
+[outputFormats.signature]
+  mediaType = "text/html"
+  baseName = "email-signature"
+  isHTML = true
+  notAlternative = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.parser]

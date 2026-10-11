@@ -8,4 +8,4 @@ weight: 8
 
 ## Subpoenas and out-of-state requests
 
-Share your subpoena, the service address, and the deadline so Wendy can review the assignment. For out-of-state subpoena assistance, include the originating jurisdiction and ask Wendy to confirm the scope of assistance available for your request.
+Share your subpoena, the service address, and the deadline so we can review the assignment. For out-of-state subpoena assistance, include the originating jurisdiction and ask Wendy to confirm the scope of assistance available for your request.

@@ -8,4 +8,4 @@ weight: 5
 
 ## Hiring a process server for the first time
 
-You do not have to be an attorney to contact Wendy. Explain what documents you have, where service is needed in Monroe, and when you need it. Wendy will review the request and explain pricing and the information needed to proceed.
+You do not have to be an attorney to contact RPS. Explain what documents you have, where service is needed in Monroe, and when you need it. We will review the request and explain pricing and the information needed to proceed.
