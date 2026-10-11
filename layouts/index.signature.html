@@ -21,7 +21,8 @@
         </table>
       </td>
       <td valign="middle" style="vertical-align:middle;font-family:Arial,sans-serif;color:#213549;">
-        <div style="font-size:18px;line-height:1.2;font-weight:bold;">Reliable Professional<br>Services</div>
+        <div style="font-size:18px;line-height:1.2;font-weight:bold;white-space:nowrap;">Reliable Professional Services</div>
+        <div style="font-size:13px;line-height:1.2;font-weight:bold;padding-top:2px;">RPS</div>
         <div style="font-size:12px;line-height:1.2;letter-spacing:2px;padding-top:4px;">{{ upper $site.footerPlace }}</div>
       </td>
     </tr>
@@ -32,9 +33,10 @@
             <td style="padding-top:12px;font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#213549;">
               <span style="font-weight:bold;color:#102235;">{{ $sig.name }}</span><br>
               {{ $sig.legalName }}<br>
-              {{ $sig.dba }}<br>
+              {{ $sig.dba }}<br><br>
+              Phone: <a href="{{ printf "tel:%s" $site.phoneTel | safeURL }}" style="color:#ad7043;text-decoration:none;">{{ $site.phoneDisplay }}</a><br>
               Email: <a href="{{ printf "mailto:%s" $site.email }}" style="color:#ad7043;text-decoration:none;">{{ $site.email }}</a><br>
-              <a href="{{ $home }}" style="color:#ad7043;text-decoration:none;">{{ $home }}</a>
+              Website: <a href="{{ $home }}" style="color:#ad7043;text-decoration:none;">{{ $home }}</a>
             </td>
           </tr>
         </table>

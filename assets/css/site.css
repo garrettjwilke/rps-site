@@ -84,6 +84,15 @@ header .wrap {
   font-size: 18px;
   line-height: 1.2;
   display: block;
+  white-space: nowrap;
+}
+
+.brand .short {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.2;
+  margin-top: 2px;
 }
 
 .brand small {
