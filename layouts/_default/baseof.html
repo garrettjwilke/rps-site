@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Description }}">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23102235'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-family='Georgia' font-size='28' fill='%23d6aa80'%3ER%3C/text%3E%3C/svg%3E">
+  {{ $style := resources.Get "css/site.css" | minify }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <script src="https://www.paypal.com/sdk/js?client-id={{ hugo.Data.site.paypalClientId }}&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+    {{ partial "contact.html" . }}
+  </main>
+  {{ partial "review-invite.html" . }}
+  {{ partial "footer.html" . }}
+  {{ $inquiry := "js/inquiry.js" | relURL }}
+  <script src="{{ $inquiry }}" data-email="{{ hugo.Data.site.email }}"></script>
+</body>
+</html>

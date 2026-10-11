@@ -1,0 +1,7 @@
+{{ $site := hugo.Data.site }}
+<footer>
+  <div class="wrap">
+    <p><strong>{{ $site.company }}</strong><br>{{ $site.footerNote }}</p>
+    <p>{{ $site.footerPlace }}<br><a href="{{ if .IsHome }}#faq{{ else }}/#faq{{ end }}">Frequently asked questions</a></p>
+  </div>
+</footer>

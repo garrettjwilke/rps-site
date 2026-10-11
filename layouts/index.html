@@ -1,0 +1,139 @@
+{{ define "main" }}
+{{ $site := hugo.Data.site }}
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">{{ .Params.hero.eyebrow }}</p>
+      <h1>{{ $lines := .Params.hero.lines }}{{ $last := sub (len $lines) 1 }}{{ range $i, $line := $lines }}{{ if $i }}<br>{{ end }}{{ if eq $i $last }}<span>{{ $line }}</span>{{ else }}{{ $line }}{{ end }}{{ end }}</h1>
+      <p>{{ .Params.hero.lead }}</p>
+      <div class="actions">
+        <a class="btn copper" href="#contact">Request Service</a>
+        <a class="btn outline" href="{{ printf "tel:%s" $site.phoneTel | safeURL }}">Call {{ $site.phoneDisplay }}</a>
+      </div>
+      <p class="service-note">{{ .Params.hero.note }}</p>
+    </div>
+    <aside>
+      <p class="eyebrow">{{ .Params.hero.asideEyebrow }}</p>
+      <h2>{{ partial "br-lines.html" .Params.hero.asideLines }}</h2>
+      <ol>
+        {{ range .Params.hero.steps }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ol>
+    </aside>
+  </div>
+</section>
+<div class="trust">
+  <div class="wrap">
+    {{ range .Params.trust }}
+    <div><strong>{{ .title }}</strong><span>{{ .text }}</span></div>
+    {{ end }}
+  </div>
+</div>
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{{ .Params.services.eyebrow }}</p>
+        <h2>{{ partial "br-lines.html" .Params.services.lines }}</h2>
+      </div>
+      <p>{{ .Params.services.intro }}</p>
+    </div>
+    <div class="cards">
+      {{ range .Params.services.cards }}
+      <article class="card">
+        <span class="number">{{ .number }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        {{ if .mailSubject }}
+        <a href="{{ printf "mailto:%s?subject=%s" $site.email (replace .mailSubject " " "%20") | safeURL }}">{{ .linkLabel }}</a>
+        {{ else }}
+        <a href="{{ .href }}">{{ .linkLabel }}</a>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+    <div class="rush">
+      <div>
+        <h3>{{ .Params.services.rushTitle }}</h3>
+        <p>{{ .Params.services.rushText }}</p>
+      </div>
+      <a class="btn copper" href="{{ printf "tel:%s" $site.phoneTel | safeURL }}">{{ .Params.services.rushLabel }}</a>
+    </div>
+  </div>
+</section>
+<section class="area" id="areas">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">{{ .Params.areas.eyebrow }}</p>
+      <h2>{{ partial "br-lines.html" .Params.areas.lines }}</h2>
+      {{ range .Params.areas.paragraphs }}
+      <p class="subtle">{{ . }}</p>
+      {{ end }}
+    </div>
+    <div class="locations">
+      {{ range .Params.areas.locations }}
+      <span>{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">{{ .Params.about.eyebrow }}</p>
+      <h2>{{ partial "br-lines.html" .Params.about.lines }}</h2>
+    </div>
+    <div class="bio">
+      <strong>{{ .Params.about.name }}</strong>
+      <p class="eyebrow">{{ .Params.about.role }}</p>
+      {{ range .Params.about.paragraphs }}
+      <p>{{ . }}</p>
+      {{ end }}
+      <a href="#contact" class="btn">{{ .Params.about.cta }}</a>
+    </div>
+  </div>
+</section>
+<section id="reviews" class="area">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">{{ .Params.reviews.eyebrow }}</p>
+        <h2>{{ .Params.reviews.heading }}</h2>
+      </div>
+      <p>{{ .Params.reviews.intro }}</p>
+    </div>
+    <div class="review-grid">
+      {{ range .Params.reviews.items }}
+      <figure class="review">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>
+          {{ range .paragraphs }}
+          <p>{{ . }}</p>
+          {{ end }}
+        </blockquote>
+        <figcaption>{{ .name }}</figcaption>
+      </figure>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<section class="faq" id="faq">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">{{ .Params.faq.eyebrow }}</p>
+      <h2>{{ .Params.faq.heading }}</h2>
+      <p class="subtle">{{ .Params.faq.intro }}</p>
+    </div>
+    <div>
+      {{ range .Params.faq.items }}
+      <details>
+        <summary>{{ .question }}</summary>
+        <p>{{ .answer }}</p>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ partial "directory.html" . }}
+{{ end }}

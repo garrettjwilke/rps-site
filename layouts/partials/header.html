@@ -1,0 +1,23 @@
+{{ $site := hugo.Data.site }}
+{{ $prefix := cond .IsHome "" "/" }}
+<a class="skip" href="#main">Skip to content</a>
+<div class="top">
+  <div class="wrap">
+    <span>{{ $site.topNote }}</span>
+    <a href="{{ printf "tel:%s" $site.phoneTel | safeURL }}">Speak with Wendy: {{ $site.phoneDisplay }}</a>
+  </div>
+</div>
+<header>
+  <div class="wrap">
+    <a class="brand" href="{{ if .IsHome }}#{{ else }}/{{ end }}">
+      <span class="mark" aria-hidden="true">R</span>
+      <span><strong>Reliable Professional<br>Services</strong><small>CHARLOTTE, NORTH CAROLINA</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      {{ range $site.nav }}
+      <a href="{{ $prefix }}{{ .href }}">{{ .label }}</a>
+      {{ end }}
+      <a href="{{ $prefix }}#contact" class="btn">Request Service</a>
+    </nav>
+  </div>
+</header>

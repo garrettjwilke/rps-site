@@ -1,0 +1,15 @@
+baseURL = "https://reliable-professional.services"
+locale = "en-us"
+title = "Reliable Professional Services"
+publishDir = "public"
+enableRobotsTXT = true
+disableKinds = ["RSS", "taxonomy", "term"]
+disableHugoGeneratorInject = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      autoHeadingID = false
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.typographer]
+        disable = true

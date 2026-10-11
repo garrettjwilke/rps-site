@@ -1,0 +1,11 @@
+<section id="directory">
+  <div class="wrap">
+    <p class="eyebrow">Explore our services and coverage</p>
+    <h2>Find help for your assignment.</h2>
+    <ul class="directory">
+      {{ range hugo.Data.site.directory }}
+      <li><a href="{{ .url }}">{{ .title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

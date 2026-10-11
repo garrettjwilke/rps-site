@@ -1,0 +1,50 @@
+company: Reliable Professional Services
+phoneDisplay: 704-338-1775
+phoneTel: "+17043381775"
+email: RPSLLCPS@gmail.com
+topNote: Serving the greater Charlotte area for over 25 years
+footerNote: Formerly Reynolds Professional Service. Serving the Charlotte area for over 25 years.
+footerPlace: Charlotte, North Carolina
+googleReviewUrl: https://share.google/F99g3sV15jXHDB75h
+paypalClientId: BAAKpwGjpqkUHURGNnppCKyHlO33AuBMW514TYjYt5CuXJsjMa1IMLfIfj_gpDHPcSZ0CjDfQABkuBG3C4
+# This id is also the selector in assets/css/site.css.
+paypalButtonId: RDFT9PXXHUHRJ
+nav:
+  - label: Services
+    href: "#services"
+  - label: Service Areas
+    href: "#areas"
+  - label: About Wendy
+    href: "#about"
+services:
+  - Process serving
+  - Summons and complaints
+  - Writs
+  - Wills
+  - Divorce papers
+  - Child support papers
+  - Same-day / rush process serving
+  - Subpoena service
+  - Court record retrieval
+  - Document filing / retrieval inquiry
+  - Mobile notary
+  - Other / not sure
+directory:
+  - title: Process Server in Charlotte, NC
+    url: /process-server-charlotte-nc/
+  - title: Mecklenburg County Process Server
+    url: /mecklenburg-county-process-server/
+  - title: Process Server in Union County, NC
+    url: /union-county-nc-process-server/
+  - title: Process Server in Monroe, NC
+    url: /process-server-monroe-nc/
+  - title: Process Server in Concord, NC
+    url: /process-server-concord-nc/
+  - title: Same-Day & Rush Process Server in Charlotte, NC
+    url: /same-day-process-server-charlotte-nc/
+  - title: Subpoena Service in Charlotte, NC
+    url: /subpoena-service-charlotte-nc/
+  - title: Court Record Retrieval in Charlotte, NC
+    url: /court-record-retrieval-charlotte-nc/
+  - title: Mobile Notary Services in Charlotte, NC
+    url: /mobile-notary-charlotte-nc/

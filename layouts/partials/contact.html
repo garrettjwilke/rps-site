@@ -1,0 +1,39 @@
+{{ $site := hugo.Data.site }}
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Let’s get started</p>
+      <h2>What do you need,<br>and when do you need it?</h2>
+      <p>Contact Wendy with your service location and deadline. She’ll help you determine the next step.</p>
+      <p>For an urgent request, please call to confirm availability.</p>
+      <div class="payment-box">
+        <p class="eyebrow">Payments</p>
+        <h3>Pay for your service</h3>
+        <p>Confirm your service and payment amount with Wendy before making a payment.</p>
+        <div id="paypal-container-{{ $site.paypalButtonId }}"></div>
+        <script>paypal.HostedButtons({hostedButtonId: "{{ $site.paypalButtonId }}"}).render("#paypal-container-{{ $site.paypalButtonId }}");</script>
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="{{ printf "tel:%s" $site.phoneTel | safeURL }}"><small>CALL WENDY</small>{{ $site.phoneDisplay }}</a>
+      <a href="mailto:{{ $site.email }}?subject=Service%20request"><small>EMAIL YOUR INQUIRY</small>{{ $site.email }}</a>
+      <form class="inquiry" id="inquiry-form">
+        <h3>Request service from Wendy</h3>
+        <p class="form-help">Complete the details below to prepare an email. Your email app will open, and you will need to send the message there.</p>
+        <div class="form-grid">
+          <label>Your name *<input name="name" autocomplete="name" required maxlength="120"></label>
+          <label>Email address *<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
+          <label>Service needed *<select name="service" required><option value="">Select a service</option>{{ range $site.services }}<option>{{ . }}</option>{{ end }}</select></label>
+          <label>Service city or county *<input name="location" required maxlength="200" placeholder="For example, Monroe or Mecklenburg County"></label>
+          <label>Preferred date or deadline<input name="deadline" type="date"></label>
+          <label class="wide">How can Wendy help? *<textarea name="message" required maxlength="2000" placeholder="Describe the service you need and your timing."></textarea></label>
+        </div>
+        <p class="form-help">For urgent requests, call <a href="{{ printf "tel:%s" $site.phoneTel | safeURL }}">{{ $site.phoneDisplay }}</a> to confirm availability. Please leave sensitive case details and documents out of this initial inquiry.</p>
+        <button class="btn copper" type="submit">Open Email to Wendy</button>
+        <p class="status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-help">Email app not opening? Email <a href="mailto:{{ $site.email }}">{{ $site.email }}</a> or call Wendy.</p>
+      </form>
+    </div>
+  </div>
+</section>
