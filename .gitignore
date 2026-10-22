@@ -2,3 +2,4 @@
 /resources/
 .hugo_build.lock
 .hugo-cache/
+*.DS_Store*
